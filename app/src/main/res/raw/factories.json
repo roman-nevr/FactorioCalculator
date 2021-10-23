@@ -1,27 +1,37 @@
 [
   {
     "id": "burner-mining-drill ",
-    "name": "dr2",
+    "name": "burner drill",
     "production_factor": 0.25
   },
   {
     "id": "electric-mining-drill ",
-    "name": "dr1",
+    "name": "electric drill",
     "production_factor": 0.5
   },
   {
     "id": "stone-furnace",
-    "name": "furnace",
+    "name": "stone furnace",
     "production_factor": 1
   },
   {
     "id": "steel-furnace",
-    "name": "furnace-2",
+    "name": "electric furnace",
     "production_factor": 2
   },
   {
     "id": "assembler-1",
-    "name": "ass",
+    "name": "assembler-1",
     "production_factor": 0.5
+  },
+  {
+    "id": "assembler-2",
+    "name": "assembler-2",
+    "production_factor": 0.75
+  },
+  {
+    "id": "chemical-plant",
+    "name": "chemical plant",
+    "production_factor": 1
   }
 ]

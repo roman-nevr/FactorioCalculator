@@ -52,7 +52,7 @@ def check_rows(rows):
                 subdict = formatProductsDict(parts)
                 row[item[0]] = subdict
 
-def format_csv_to_json(from_file, to_file):
+def format_csv_to_json(from_file, to_file, to_file2):
   with open(from_file) as f:
       reader = csv.DictReader(f)
       rows = list(reader)
@@ -62,7 +62,10 @@ def format_csv_to_json(from_file, to_file):
   with open(to_file, 'w') as f:
       json.dump(rows, f, indent=2)
 
+  with open(to_file2, 'w') as f:
+        json.dump(rows, f, indent=2)
 
-format_csv_to_json('app/factories.csv', 'app/src/main/res/raw/factories.json')
-format_csv_to_json('app/recepies.csv', 'app/src/main/res/raw/recepies.json')
+
+format_csv_to_json('app/factories.csv', 'app/src/main/res/raw/factories.json', 'app/src/test/resources/testraw/factories.json')
+format_csv_to_json('app/recepies.csv', 'app/src/main/res/raw/recepies.json', 'app/src/test/resources/testraw/recepies.json')
 

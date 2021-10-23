@@ -16,7 +16,7 @@
   {
     "id": "iron-plate",
     "name": "iron plate",
-    "time": 0.5,
+    "time": 3.2,
     "factory_id": "stone-furnace",
     "output": 1,
     "resources": {
@@ -25,8 +25,8 @@
   },
   {
     "id": "copper-plate",
-    "name": "copper-plate",
-    "time": 0.5,
+    "name": "copper plate",
+    "time": 3.2,
     "factory_id": "stone-furnace",
     "output": 1,
     "resources": {
@@ -52,6 +52,27 @@
     "resources": {
       "copper-cable": 3,
       "iron-plate": 1
+    }
+  },
+  {
+    "id": "transport-belt",
+    "name": "transport belt ",
+    "time": 0.5,
+    "factory_id": "assembler-1",
+    "output": 2,
+    "resources": {
+      "iron-gear-wheel": 1,
+      "iron-plate": 1
+    }
+  },
+  {
+    "id": "iron-gear-wheel",
+    "name": "iron gear",
+    "time": 0.5,
+    "factory_id": "assembler-1",
+    "output": 1,
+    "resources": {
+      "iron-plate": 2
     }
   }
 ]

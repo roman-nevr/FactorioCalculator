@@ -5,11 +5,6 @@ class ResourcePack(
   val amount: Int
 )
 
-class ResourceModelPack(
-  val resource: RecipeModel,
-  val amount: Int
-)
-
 class ProductionPack(
   val resource: Recipe,
   val amountPerSec: Double

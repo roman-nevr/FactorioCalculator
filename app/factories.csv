@@ -1,6 +1,8 @@
 id,name,production_factor
-burner-mining-drill ,dr2,0.25
-electric-mining-drill ,dr1,0.5
-stone-furnace,furnace,1
-steel-furnace,furnace-2,2
-assembler-1,ass,0.5
+burner-mining-drill ,burner drill,0.25
+electric-mining-drill ,electric drill,0.5
+stone-furnace,stone furnace,1
+steel-furnace,electric furnace,2
+assembler-1,assembler-1,0.5
+assembler-2,assembler-2,0.75
+chemical-plant,chemical plant,1

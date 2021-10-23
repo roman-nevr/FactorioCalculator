@@ -1,20 +1,25 @@
 package ru.romaberendeev.factoriocalculator
 
-class Calculator {
+object Calculator {
 
-  fun calculate(production: List<ProductionPack>) {
-    val c = production.flatMap { pack ->
-      pack.resource.resources.map {
-        val factory = it.resource.factory
-        ProductionFactory(
-          factoriesAmount = it.amount * pack.amountPerSec / factory.factor,
-          factory = factory,
-          product = it.resource
+  fun calculate(production: List<ProductionPack>): List<ProductionFactory> {
+
+    val result = production.compressPacks().map { productionPack ->
+      val recipe = productionPack.resource
+      val downLevel = calculate(recipe.resources.map { resourcePack ->
+        ProductionPack(
+          resourcePack.resource,
+          resourcePack.amount * productionPack.amountPerSec / productionPack.resource.output
         )
-//        ProductionPack(it.resource, it.amount * pack.amountPerSec)
-      }
-    }.compressFactories()
-    println(c)
+      })
+      ProductionFactory(
+        factoriesAmount = productionPack.amountPerSec * recipe.time / recipe.factory.productionFactor / recipe.output,
+        factory = recipe.factory,
+        product = recipe,
+        downLevel = downLevel
+      )
+    }
+    return result
   }
 
 //  private fun calculate(product: Recipe): Map<Int, Recipe> {
@@ -30,9 +35,14 @@ class ProductionLevel(
 class ProductionFactory(
   val factoriesAmount: Double,
   val factory: Factory,
-  val product: Recipe
+  val product: Recipe,
+  val downLevel: List<ProductionFactory> = emptyList()
 ) {
-  val productPerSec = factoriesAmount * factory.factor / product.time
+  val productPerSec = factoriesAmount * factory.productionFactor / product.time * product.output
+
+  override fun toString(): String {
+    return "$factoriesAmount ${factory.factoryName} of ${product.recipeName}"
+  }
 }
 
 fun List<ProductionPack>.compressPacks(): List<ProductionPack> {

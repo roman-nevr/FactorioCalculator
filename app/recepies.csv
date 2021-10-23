@@ -1,8 +1,25 @@
 id,name,time,factory_id,output,resources
 iron-ore,iron ore,1,electric-mining-drill ,1,
 copper-ore,copper ore,1,electric-mining-drill ,1,
-iron-plate,iron plate,0.5,stone-furnace,1,iron-ore:1
-copper-plate,copper-plate,0.5,stone-furnace,1,copper-ore:1
+charcoal,charcoal,1,electric-mining-drill ,1,
+iron-plate,iron plate,3.2,stone-furnace,1,iron-ore:1
+copper-plate,copper plate,3.2,stone-furnace,1,copper-ore:1
 copper-cable,copper cable,0.5,assembler-1,2,copper-plate:1
 green-chip,green chip,0.5,assembler-1,1,"copper-cable:3;
 iron-plate:1"
+transport-belt,transport belt ,0.5,assembler-1,2,"iron-gear-wheel:1;
+iron-plate:1"
+iron-gear-wheel,iron gear,0.5,assembler-1,1,iron-plate:2
+inserter,yellow inserter,0.5,assembler-1,1,"iron-gear-wheel:1;
+iron-plate:1;
+green-chip:1"
+green-bottle,green bottle,6,assembler-1,1,"inserter:1;
+transport-belt:1"
+red-bottle,red bottle,5,assembler-1,1,"iron-gear-wheel:1;
+copper-plate:1"
+petroleum-gas,petroleum gas,0.01,chemical-plant,1,
+plastic-bar,plastic bar,1,chemical-plant,2,"charcoal:1;
+petrolium-gas:20;"
+red-chip,red chip,6,assembler-1,1,"copper-cable:4;
+green-chip:2;
+plastic-bar:2"
