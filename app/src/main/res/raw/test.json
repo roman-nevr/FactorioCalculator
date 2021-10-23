@@ -1,0 +1,12 @@
+[
+  {
+    "factor": "1",
+    "id": "drill",
+    "name": "dr"
+  },
+  {
+    "factor": "2",
+    "id": "assembler-1",
+    "name": "ass"
+  }
+]

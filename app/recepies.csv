@@ -1,0 +1,8 @@
+id,name,time,factory_id,output,resources
+iron-ore,iron ore,1,electric-mining-drill ,1,
+copper-ore,copper ore,1,electric-mining-drill ,1,
+iron-plate,iron plate,0.5,stone-furnace,1,iron-ore:1
+copper-plate,copper-plate,0.5,stone-furnace,1,copper-ore:1
+copper-cable,copper cable,0.5,assembler-1,2,copper-plate:1
+green-chip,green chip,0.5,assembler-1,1,"copper-cable:3;
+iron-plate:1"

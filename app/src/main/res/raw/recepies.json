@@ -1,0 +1,67 @@
+[
+  {
+    "id": "iron-ore",
+    "name": "iron ore",
+    "time": 1,
+    "factory_id": "electric-mining-drill ",
+    "output": 1
+  },
+  {
+    "id": "copper-ore",
+    "name": "copper ore",
+    "time": 1,
+    "factory_id": "electric-mining-drill ",
+    "output": 1
+  },
+  {
+    "id": "iron-plate",
+    "name": "iron plate",
+    "time": 0.5,
+    "factory_id": "stone-furnace",
+    "output": 1,
+    "resources": [
+      {
+        "iron-ore": 1
+      }
+    ]
+  },
+  {
+    "id": "copper-plate",
+    "name": "copper-plate",
+    "time": 0.5,
+    "factory_id": "stone-furnace",
+    "output": 1,
+    "resources": [
+      {
+        "copper-ore": 1
+      }
+    ]
+  },
+  {
+    "id": "copper-cable",
+    "name": "copper cable",
+    "time": 0.5,
+    "factory_id": "assembler-1",
+    "output": 2,
+    "resources": [
+      {
+        "copper-plate": 1
+      }
+    ]
+  },
+  {
+    "id": "green-chip",
+    "name": "green chip",
+    "time": 0.5,
+    "factory_id": "assembler-1",
+    "output": 1,
+    "resources": [
+      {
+        "copper-cable": 3
+      },
+      {
+        "iron-plate": 1
+      }
+    ]
+  }
+]
