@@ -4,7 +4,6 @@ import ru.romaberendeev.factoriocalculator.Factory.ASSEMBLER_1
 import ru.romaberendeev.factoriocalculator.Factory.BURNER_MINING_DRILL
 import ru.romaberendeev.factoriocalculator.Factory.STONE_FURNACE
 
-typealias Seconds = Double
 
 enum class Recipe(
   val type: String,
@@ -29,33 +28,4 @@ enum class Recipe(
   val factory: Factory = factories.first()
 }
 
-/*
-abstract class Fuel(
-  override val type: String,
-  override val resources: List<ResourcePack>,
-  override val output: Int,
-  val fuelValue: KW = 0
-) : Recipe(type, resources, output)
 
-object IRON_ORE : Recipe("Iron Ore", emptyList(), 1)
-object COPPER_ORE : Recipe("Cooper Ore", emptyList(), 1)
-
-object CHARCOAL : Fuel("Charcoal", emptyList(), output = 1, fuelValue = 4000)
-
-object STEEL_PLATE : Recipe("Steel plate", listOf(IRON_ORE.toPack(1)), 1)
-object COPPER_PLATE : Recipe("Copper plate", listOf(COPPER_PLATE.toPack(1)), 1)
-*/
-
-fun pack(vararg pairs: Pair<Int, Recipe>): List<ResourcePack> {
-  return pairs.map { pair -> ResourcePack(pair.second, pair.first) }
-}
-
-fun Recipe.toPack(amount: Int): ResourcePack {
-  return ResourcePack(this, amount)
-}
-
-fun Recipe.asProduct(amountPerSec: Double): ProductionPack {
-  return ProductionPack(this, amountPerSec)
-}
-
-infix fun <A, B> A.of(that: B): Pair<A, B> = Pair(this, that)
