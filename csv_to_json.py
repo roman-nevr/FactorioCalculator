@@ -12,6 +12,30 @@ def formatNumber(value):
     else:
         return None
 
+def formatProductsList(parts):
+    subdict = []
+    for part in parts:
+        elements = part.split(":")
+        key = elements[0].replace("\n", "").strip()
+        value = formatNumber(elements[1])
+        if value is not None:
+            subdict.append({key: value})
+        else:
+            subdict.append({key: elements[1].strip()})
+    return subdict
+
+def formatProductsDict(parts):
+    subdict = {}
+    for part in parts:
+        elements = part.split(":")
+        key = elements[0].replace("\n", "").strip()
+        value = formatNumber(elements[1])
+        if value is not None:
+            subdict[key] = value
+        else:
+            subdict[key] = elements[1].strip()
+    return subdict
+
 
 def check_rows(rows):
     for row in rows:
@@ -25,15 +49,7 @@ def check_rows(rows):
                 row[item[0]] = formatted
             elif value.find(":") != -1:
                 parts = value.split(";")
-                subdict = []
-                for part in parts:
-                    elements = part.split(":")
-                    key = elements[0].replace("\n", "").strip()
-                    value = formatNumber(elements[1])
-                    if value is not None:
-                        subdict.append({key: value})
-                    else:
-                        subdict.append({key: elements[1].strip()})
+                subdict = formatProductsDict(parts)
                 row[item[0]] = subdict
 
 def format_csv_to_json(from_file, to_file):
